@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #0A0A0D;
+  --color-bg-surface: #14141A;
+  --color-bg-input: #1C1C24;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9494A3;
+  --color-accent: #7C3AED;
+  --color-accent-glow: rgba(124, 58, 237, 0.3);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-text-primary antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2.5 bg-white text-black font-semibold rounded-lg transition-all hover:bg-gray-100 active:scale-95 disabled:opacity-50 disabled:scale-100 shadow-sm hover:shadow-md;
+  }
+  
+  .card {
+    @apply bg-bg-surface border border-border-subtle rounded-2xl shadow-lg overflow-hidden;
+  }
+
+  .mode-btn {
+    @apply bg-bg-input border border-border-subtle text-text-secondary px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-white cursor-pointer;
+  }
+
+  .mode-btn-active {
+    @apply bg-accent text-white border-accent shadow-[0_0_15px_var(--color-accent-glow)];
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
